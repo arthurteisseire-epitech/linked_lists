@@ -15,5 +15,6 @@ typedef struct node_s {
 
 node_t *node_new(void *data);
 void node_push(node_t *head, node_t *new_node);
+node_t *node_pop(node_t *node);
 
 #endif

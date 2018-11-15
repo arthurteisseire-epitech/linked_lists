@@ -13,9 +13,11 @@ DSRC_UT	=	tests/src/
 
 SRC		=	$(DSRC)node_new.c			\
 			$(DSRC)node_push.c			\
+			$(DSRC)node_pop.c			\
 
 SRC_UT	=	$(DSRC_UT)tests_node_new.c			\
 			$(DSRC_UT)tests_node_push.c			\
+			$(DSRC_UT)tests_node_pop.c			\
 
 CFLAGS	+=	-Wall -W -Wextra -I$(INC)
 LDFLAGS	=	-lcriterion
