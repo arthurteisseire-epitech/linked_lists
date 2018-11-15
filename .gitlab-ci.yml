@@ -1,0 +1,15 @@
+before_script:
+  - apt-get update -qq && apt-get install -y -qq cmake
+  - git clone --recursive https://github.com/Snaipe/Criterion
+  - cd Criterion
+  - mkdir build
+  - cd build
+  - cmake ..
+  - cmake --build .
+  - make install
+  - export LD_LIBRARY_PATH=/usr/local/lib
+  - cd ../..
+
+test:
+    script:
+      - make test_run
