@@ -15,7 +15,7 @@ Test(node_push, basic)
 
     cr_assert_not_null(old_head);
     cr_assert_not_null(new_head);
-    node_push(old_head, new_head);
+    node_push(new_head, old_head);
     cr_assert_eq(new_head->next, old_head);
     free(old_head);
     free(new_head);

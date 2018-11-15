@@ -8,12 +8,18 @@
 #include <stddef.h>
 #include "node.h"
 
-node_t *node_pop(node_t *node, void (*free_func)(void *))
+node_t *node_pop_soft(node_t *head)
 {
-    node_t *new_head = node->next;
+    node_t *new_head = head->next;
 
-    node->next = NULL;
-    if (free_func != NULL)
-        free_func(node);
+    head->next = NULL;
+    return (new_head);
+}
+
+node_t *node_pop(node_t *head, void (*free_func)(void *))
+{
+    node_t *new_head = node_pop_soft(head);
+
+    node_destroy(head, free_func);
     return (new_head);
 }
