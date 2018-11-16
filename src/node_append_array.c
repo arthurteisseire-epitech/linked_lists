@@ -8,7 +8,7 @@
 #include <stddef.h>
 #include "node.h"
 
-static int get_last_index(void **array)
+static int find_last_index(void **array)
 {
     int i = 0;
 
@@ -29,7 +29,7 @@ static node_t *append_new_node(node_t *head, void *data)
 
 node_t *node_append_array(node_t *head, void **array)
 {
-    for (int i = get_last_index(array); i >= 0; i--) {
+    for (int i = find_last_index(array); i >= 0; i--) {
         head = append_new_node(head, array[i]);
         if (head == NULL)
             return (NULL);
