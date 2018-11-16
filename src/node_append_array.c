@@ -8,20 +8,31 @@
 #include <stddef.h>
 #include "node.h"
 
-node_t *node_append_array(node_t *old_head, void **array)
+static int get_last_index(void **array)
 {
     int i = 0;
-    node_t *tmp;
-    node_t *head = old_head;
 
     while (array[i] != NULL)
         i++;
-    for (i--; i >= 0; i--) {
-        tmp = node_new(array[i]);
-        if (tmp == NULL)
+    return (i - 1);
+}
+
+static node_t *append_new_node(node_t *head, void *data)
+{
+    node_t *new_head = node_new(data);
+
+    if (new_head == NULL)
+        return (NULL);
+    node_push(new_head, head);
+    return (new_head);
+}
+
+node_t *node_append_array(node_t *head, void **array)
+{
+    for (int i = get_last_index(array); i >= 0; i--) {
+        head = append_new_node(head, array[i]);
+        if (head == NULL)
             return (NULL);
-        node_push(tmp, head);
-        head = tmp;
     }
     return (head);
 }
