@@ -55,4 +55,4 @@ test_run:
 test_debug: CFLAGS += -g
 test_debug: test_run
 
-.PHONY: all clean fclean re debug test_run
+.PHONY: all clean fclean re debug test_run test_debug
