@@ -10,8 +10,8 @@
 
 Test(node_destroy_all, basic)
 {
-    void *array[] = {"data1", "data2", "data3", NULL};
-    node_t *head = node_append_array(array, NULL);
+    void *datas[] = {"data1", "data2", "data3", NULL};
+    node_t *head = node_append_array(datas, NULL);
 
     cr_assert_not_null(head);
     node_destroy_all(head, NULL);

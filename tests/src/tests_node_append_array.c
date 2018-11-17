@@ -20,12 +20,12 @@ void assert_list_equals_array(node_t *head, void **array)
 
 Test(node_append_array, basic)
 {
-    void *array[] = {"data1", "data2", NULL};
+    void *datas[] = {"data1", "data2", NULL};
     node_t *head = node_new(NULL);
 
     cr_assert_not_null(head);
-    head = node_append_array(array, head);
+    head = node_append_array(datas, head);
     cr_assert_not_null(head);
-    assert_list_equals_array(head, array);
+    assert_list_equals_array(head, datas);
     node_destroy_all(head, NULL);
 }
