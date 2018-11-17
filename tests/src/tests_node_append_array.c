@@ -24,7 +24,7 @@ Test(node_append_array, basic)
     node_t *head = node_new(NULL);
 
     cr_assert_not_null(head);
-    head = node_append_array(head, array);
+    head = node_append_array(array, head);
     cr_assert_not_null(head);
     assert_list_equals_array(head, array);
     node_destroy_all(head, NULL);
