@@ -23,5 +23,6 @@ void node_destroy_all(node_t *head, void (*free_func)(void *));
 node_t *node_push_new(node_t *head, const void *data);
 node_t *node_insert(node_t *head, node_t *index, void *data);
 void node_insert_node(node_t *head, node_t *index, node_t *new_node);
+void node_remove(node_t *head, node_t *node, void (*free_func)(void *));
 
 #endif
