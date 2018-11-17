@@ -8,12 +8,12 @@
 #include <stdlib.h>
 #include "node.h"
 
-node_t *node_new(void *data)
+node_t *node_new(const void *data)
 {
     node_t *node = malloc(sizeof(node_t));
 
     if (node != NULL) {
-        node->data = data;
+        node->data = (void *)data;
         node->next = NULL;
     }
     return (node);

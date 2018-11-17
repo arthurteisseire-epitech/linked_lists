@@ -8,7 +8,7 @@
 #include <criterion/criterion.h>
 #include "node.h"
 
-static void *datas[] = {"data1", "data2", NULL};
+static const void *datas[] = {"data1", "data2", NULL};
 
 Test(node_insert, middle)
 {

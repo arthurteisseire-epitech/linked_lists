@@ -8,7 +8,7 @@
 #include <criterion/criterion.h>
 #include "node.h"
 
-void assert_list_equals_array(node_t *head, void **array)
+void assert_list_equals_array(node_t *head, const void **array)
 {
     node_t *curr = head;
 
@@ -20,7 +20,7 @@ void assert_list_equals_array(node_t *head, void **array)
 
 Test(node_append_array, basic)
 {
-    void *datas[] = {"data1", "data2", NULL};
+    const void *datas[] = {"data1", "data2", NULL};
     node_t *head = node_new(NULL);
 
     cr_assert_not_null(head);
