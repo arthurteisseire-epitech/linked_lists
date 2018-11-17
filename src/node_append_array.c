@@ -17,20 +17,10 @@ static int find_last_index(void **array)
     return (i - 1);
 }
 
-static node_t *append_new_node(node_t *head, void *data)
-{
-    node_t *new_head = node_new(data);
-
-    if (new_head == NULL)
-        return (NULL);
-    node_push(new_head, head);
-    return (new_head);
-}
-
 node_t *node_append_array(node_t *head, void **array)
 {
     for (int i = find_last_index(array); i >= 0; i--) {
-        head = append_new_node(head, array[i]);
+        head = node_push_new(head, array[i]);
         if (head == NULL)
             return (NULL);
     }

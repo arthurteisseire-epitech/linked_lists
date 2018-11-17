@@ -20,5 +20,6 @@ node_t *node_pop(node_t *head, void (*free_func)(void *));
 void node_destroy(node_t *node, void (*free_func)(void *));
 node_t *node_append_array(node_t *head, void **array);
 void node_destroy_all(node_t *head, void (*free_func)(void *));
+node_t *node_push_new(node_t *head, void *data);
 
 #endif
