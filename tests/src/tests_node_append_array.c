@@ -27,6 +27,5 @@ Test(node_append_array, basic)
     head = node_append_array(head, array);
     cr_assert_not_null(head);
     assert_list_equals_array(head, array);
-    while (head != NULL)
-        head = node_pop(head, NULL);
+    node_destroy_all(head, NULL);
 }
