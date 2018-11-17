@@ -17,6 +17,7 @@ SRC		=	$(DSRC)node_new.c			\
 			$(DSRC)node_destroy.c		\
 			$(DSRC)node_destroy_all.c	\
 			$(DSRC)node_append_array.c	\
+			$(DSRC)node_insert.c		\
 
 SRC_UT	=	$(DSRC_UT)tests_node_new.c			\
 			$(DSRC_UT)tests_node_push.c			\
@@ -24,6 +25,7 @@ SRC_UT	=	$(DSRC_UT)tests_node_new.c			\
 			$(DSRC_UT)tests_node_destroy.c		\
 			$(DSRC_UT)tests_node_destroy_all.c	\
 			$(DSRC_UT)tests_node_append_array.c	\
+			$(DSRC_UT)tests_node_insert.c		\
 
 CFLAGS	+=	-Wall -W -Wextra -I$(INC)
 LDFLAGS	=	-lcriterion

@@ -17,8 +17,7 @@ node_t *node_push_new(node_t *head, void *data)
 {
     node_t *new_head = node_new(data);
 
-    if (new_head == NULL)
-        return (NULL);
-    node_push(new_head, head);
+    if (new_head != NULL)
+        node_push(new_head, head);
     return (new_head);
 }
