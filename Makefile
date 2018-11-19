@@ -6,25 +6,11 @@
 ##
 
 MODULES	=	node	\
+			stack	\
 
-all: $(MODULES)
-	make $@ -C $<
+all:
+	for module in $(MODULES); do\
+		$(MAKE) --directory=$$module $(TARGET);\
+	done
 
-clean: $(MODULES)
-	make $@ -C $<
-
-fclean: $(MODULES)
-	make $@ -C $<
-
-debug: $(MODULES)
-	make $@ -C $<
-
-test_run: $(MODULES)
-	make $@ -C $<
-
-test_debug: $(MODULES)
-	make $@ -C $<
-
-re:	fclean all
-
-.PHONY: all clean fclean debug test_run test_debug re
+.PHONY: all
