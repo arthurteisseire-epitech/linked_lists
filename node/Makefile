@@ -32,7 +32,7 @@ SRC_UT	=	$(DSRC_UT)tests_node_new.c			\
 CFLAGS	+=	-Wall -W -Wextra -I$(INC)
 LDFLAGS	=	-lcriterion
 OBJ		=	$(SRC:.c=.o)
-NAME	=	binary_name
+NAME	=	libnode
 NAME_UT	=	units
 
 all: $(OBJ)

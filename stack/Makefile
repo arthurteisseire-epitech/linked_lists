@@ -20,7 +20,7 @@ SRC_UT	=	$(DSRC_UT)tests_stack_new.c		\
 CFLAGS	+=	-Wall -W -Wextra -I$(INC) -I$(INC_NODE)
 LDFLAGS	=	-lcriterion
 OBJ		=	$(SRC:.c=.o)
-NAME	=	binary_name
+NAME	=	libstack
 NAME_UT	=	units
 
 all: $(OBJ)
