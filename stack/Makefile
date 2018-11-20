@@ -7,24 +7,32 @@
 
 CC		=	gcc
 ROOT	=	../
+
+DNODE	=	$(ROOT)node/
+LIBNODE	=	node
+
+LIBS	+=	-L$(DNODE) -l$(LIBNODE)
+
 INC		=	include
-INC_NODE=	$(ROOT)node/include/
+INC_NODE=	$(DNODE)include/
 DTESTS	=	tests/
 DSRC	=	src/
 DSRC_UT	=	tests/src/
 
 SRC		=	$(DSRC)stack_new.c	\
+			$(DSRC)stack_push.c	\
 
 SRC_UT	=	$(DSRC_UT)tests_stack_new.c		\
+			$(DSRC_UT)tests_stack_push.c	\
 
 CFLAGS	+=	-Wall -W -Wextra -I$(INC) -I$(INC_NODE)
 LDFLAGS	=	-lcriterion
 OBJ		=	$(SRC:.c=.o)
-NAME	=	libstack
+NAME	=	libstack.a
 NAME_UT	=	units
 
 all: $(OBJ)
-	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(LDFLAGS)
+	ar rc $(NAME) $(OBJ)
 
 clean:
 	rm -f $(OBJ)
@@ -40,7 +48,7 @@ debug: re
 
 test_run: CFLAGS += --coverage
 test_run:
-	$(CC) -o $(NAME_UT) $(SRC) $(SRC_UT) $(CFLAGS) $(LDFLAGS)
+	$(CC) -o $(NAME_UT) $(SRC) $(SRC_UT) $(CFLAGS) $(LDFLAGS) $(LIBS)
 	./$(NAME_UT)
 	gcov *.gcno &> /dev/null
 

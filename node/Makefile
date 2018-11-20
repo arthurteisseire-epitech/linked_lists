@@ -32,11 +32,11 @@ SRC_UT	=	$(DSRC_UT)tests_node_new.c			\
 CFLAGS	+=	-Wall -W -Wextra -I$(INC)
 LDFLAGS	=	-lcriterion
 OBJ		=	$(SRC:.c=.o)
-NAME	=	libnode
+NAME	=	libnode.a
 NAME_UT	=	units
 
 all: $(OBJ)
-	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(LDFLAGS)
+	ar rc $(NAME) $(OBJ)
 
 clean:
 	rm -f $(OBJ)
