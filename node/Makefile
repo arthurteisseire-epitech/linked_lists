@@ -51,7 +51,7 @@ debug: CFLAGS += -g
 debug: re
 
 test_run: CFLAGS += --coverage
-test_run:
+test_run: all
 	$(CC) -o $(NAME_UT) $(SRC) $(SRC_UT) $(CFLAGS) $(LDFLAGS)
 	./$(NAME_UT)
 	gcov *.gcno &> /dev/null
