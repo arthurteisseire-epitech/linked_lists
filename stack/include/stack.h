@@ -1,4 +1,4 @@
-/* 
+/*
 ** EPITECH PROJECT, 2018
 ** linked_lists
 ** File description:
