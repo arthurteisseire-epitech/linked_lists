@@ -21,4 +21,4 @@ $(RULES):
 		$(MAKE) --directory=$$module $@;\
 	done
 
-.PHONY: all clean fclean re debug test_run test_debug
+.PHONY: $(RULES)
