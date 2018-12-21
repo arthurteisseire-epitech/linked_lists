@@ -21,6 +21,7 @@ DSRC_UT	=	tests/src/
 
 SRC		=	$(DSRC)stack_new.c	\
 			$(DSRC)stack_push.c	\
+			$(DSRC)stack_get.c	\
 
 SRC_UT	=	$(DSRC_UT)tests_stack_new.c		\
 			$(DSRC_UT)tests_stack_push.c	\
