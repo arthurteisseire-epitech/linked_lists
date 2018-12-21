@@ -11,7 +11,6 @@
 int stack_push(stack_t *stack, void *data)
 {
     stack->head = node_push_new(stack->head, data);
-
     if (stack->head == NULL)
         return (-1);
     return (0);
