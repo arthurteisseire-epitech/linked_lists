@@ -19,14 +19,16 @@ DTESTS	=	tests/
 DSRC	=	src/
 DSRC_UT	=	tests/src/
 
-SRC		=	$(DSRC)stack_new.c	\
-			$(DSRC)stack_push.c	\
-			$(DSRC)stack_pop.c	\
-			$(DSRC)stack_get.c	\
+SRC		=	$(DSRC)stack_new.c		\
+			$(DSRC)stack_push.c		\
+			$(DSRC)stack_pop.c		\
+			$(DSRC)stack_get.c		\
+			$(DSRC)stack_destroy.c	\
 
 SRC_UT	=	$(DSRC_UT)tests_stack_new.c		\
 			$(DSRC_UT)tests_stack_push.c	\
 			$(DSRC_UT)tests_stack_pop.c		\
+			$(DSRC_UT)tests_stack_destroy.c	\
 
 CFLAGS	+=	-Wall -W -Wextra -I$(INC) -I$(INC_NODE)
 LDFLAGS	=	-lcriterion

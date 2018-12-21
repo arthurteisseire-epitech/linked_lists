@@ -22,5 +22,5 @@ Test(stack_pop, basic)
     cr_assert_str_eq(stack_get(stack), data1);
     stack_pop(stack, NULL);
     cr_assert_null(stack_get(stack));
-    free(stack);
+    stack_destroy(stack, NULL);
 }

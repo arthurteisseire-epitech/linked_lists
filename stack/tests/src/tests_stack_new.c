@@ -14,5 +14,5 @@ Test(stack_new, basic)
 
     cr_assert_not_null(stack);
     cr_assert_null(stack->head);
-    free(stack);
+    stack_destroy(stack, NULL);
 }

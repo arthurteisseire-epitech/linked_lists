@@ -2,19 +2,25 @@
 ** EPITECH PROJECT, 2018
 ** linked_lists
 ** File description:
-** tests_stack_push.c
+** tests_stack_destroy.c
 */
 
 #include <criterion/criterion.h>
 #include "stack.h"
 
-Test(stack_push, basic)
+Test(stack_erase, mem_check)
 {
     stack_t *stack = stack_new();
-    const char *data = "data1";
 
     cr_assert_not_null(stack);
-    cr_assert(stack_push(stack, (void *)data) != -1);
-    cr_assert(memcmp(stack_get(stack), data, strlen(data)) == 0);
+    stack_erase(stack, NULL);
+    free(stack);
+}
+
+Test(stack_destroy, mem_check)
+{
+    stack_t *stack = stack_new();
+
+    cr_assert_not_null(stack);
     stack_destroy(stack, NULL);
 }
