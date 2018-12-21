@@ -6,8 +6,11 @@
 */
 
 #include "stack.h"
+#include "stddef.h"
 
 void *stack_get(stack_t *stack)
 {
+    if (stack->head == NULL)
+        return (NULL);
     return (stack->head->data);
 }
