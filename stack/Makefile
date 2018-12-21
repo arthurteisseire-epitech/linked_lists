@@ -21,10 +21,12 @@ DSRC_UT	=	tests/src/
 
 SRC		=	$(DSRC)stack_new.c	\
 			$(DSRC)stack_push.c	\
+			$(DSRC)stack_pop.c	\
 			$(DSRC)stack_get.c	\
 
 SRC_UT	=	$(DSRC_UT)tests_stack_new.c		\
 			$(DSRC_UT)tests_stack_push.c	\
+			$(DSRC_UT)tests_stack_pop.c		\
 
 CFLAGS	+=	-Wall -W -Wextra -I$(INC) -I$(INC_NODE)
 LDFLAGS	=	-lcriterion
